@@ -11,10 +11,15 @@
     <title>Movies</title>
   </head>
   <body>
-    <div class="container">
-    	<h1>Movies</h1>
-    	<hr>
+    <div class="container" align="center">
+    	<br><br>
+    	<h1>MovieTracker</h1>
+    	<br>
+    	</div>
+    	<div class="container">
+    	<br>
     	<h2>Update Movie</h2>
+    	<br>
     	<form action="#" th:action="@{/save}" th:object="${movie}" method="POST">
     		
     		<!-- Add hidden form field to handle update -->
@@ -24,10 +29,10 @@
     		<input type="text" th:field="*{venue}" placeholder="Venue" class="form-control mb-4 col-4">
     		<input type="text" th:field="*{date}" placeholder="Date" class="form-control mb-4 col-4">
     		<input type="text" th:field="*{notes}" placeholder="Notes" class="form-control mb-4 col-4">
-    		<button type="submit" class="btn btn-info col-2">Update Movie</button>
+    		<button type="submit" class="btn btn-primary btn-sm mb-3 col-2">Update</button>
     	</form>
-    	<hr>
-    	<a th:href="@{/}">Back to Movie List</a>
+    	<br>
+    	<a th:href="@{/}" class="text-black">Back to Movie List</a>
     </div>
 
    
