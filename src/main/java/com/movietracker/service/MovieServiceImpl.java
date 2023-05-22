@@ -18,11 +18,13 @@ public class MovieServiceImpl implements MovieService{
 
 	@Override
 	public List<Movie> getAllMovie() {
+		System.out.println("getAllMovie called");
 		return movieRepository.findAll();
 	}
 
 	@Override
 	public void save(Movie movie) {
+		System.out.println("save called");
 		if(Objects.nonNull(movie)) {
 		movieRepository.save(movie);	
 		}
@@ -31,6 +33,7 @@ public class MovieServiceImpl implements MovieService{
 
 	@Override
 	public Movie getById(Long id) {
+		System.out.println("getById called");
 		Movie movie = null;
 		if (Objects.nonNull(id)) {
 			Optional<Movie> optionalMovie = movieRepository.findById(id);
@@ -45,6 +48,7 @@ public class MovieServiceImpl implements MovieService{
 
 	@Override
 	public void deleteById(Long id) {
+		System.out.println("deleteById called");
 		if(Objects.nonNull(id)) {
 			movieRepository.deleteById(id);
 		}

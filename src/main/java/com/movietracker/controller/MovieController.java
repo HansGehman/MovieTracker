@@ -19,12 +19,14 @@ public class MovieController {
 	
 	@GetMapping("/")
 	public String viewHomePage(Model model) {
+		System.out.println("getmapping / called");
 		model.addAttribute("allmovielist", movieService.getAllMovie());
 		return "index";
 	}
 	
 	@GetMapping("/add")
 	public String addNewMovie(Model model) {
+		System.out.println("getmapping /add called");
 		Movie movie = new Movie();
 		model.addAttribute("movie", movie);
 		return "addMovie";
@@ -32,12 +34,14 @@ public class MovieController {
 	
 	@PostMapping("/save")
 	public String saveMovie(@ModelAttribute("movie") Movie movie) {
+		System.out.println("postmapping /save called");
 		movieService.save(movie);
 		return "redirect:/";
 	}
 	
 	@GetMapping("updateform/{id}")
 	public String updateForm(@PathVariable(value = "id") long id, Model model) {
+		System.out.println("getmapping updateform/{id} called");
 		Movie movie = movieService.getById(id);
 		model.addAttribute("movie", movie);
 		return "update";
@@ -45,6 +49,7 @@ public class MovieController {
 	
 	@GetMapping("/delete/{id}")
 	public String deleteById(@PathVariable(value = "id") long id) {
+		System.out.println("getmapping /delete/{id} called");
 		movieService.deleteById(id);
 		return "redirect:/";
 	}
